@@ -15,8 +15,8 @@ public class GraphicInterface {
                 case 1 -> {//Deposit
                     account.deposit();
                 }
-                case 2 -> {//Transfer
-                    account.transfer();
+                case 2 -> {//Withdraw
+                    account.withdraw();
                 }
                 case 3 -> {//Check balance
                     account.checkBalance();
