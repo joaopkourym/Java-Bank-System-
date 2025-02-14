@@ -2,12 +2,12 @@ import javax.swing.JOptionPane;
 
 public class Account {
     //Declaring account variables
-    private String email, depositStr, transferenceStr, pinPasswordStr;
+    private String email, depositStr, withdrawStr, pinPasswordStr;
     private Integer pinPassword;
-    private double balance = 1000, deposit, transference;
+    private double balance = 1000, deposit, withdraw;
 
     //Declaring menu variables
-    private String[] options = {"Create an account", "Deposit", "Transfer", "Check balance", "Exit"};
+    private String[] options = {"Create an account", "Deposit", "Withdraw", "Check balance", "Exit"};
     public int selection;
         
     //Open the menu 
@@ -46,16 +46,16 @@ public class Account {
                 JOptionPane.showMessageDialog(null, "Deposit successful!\nNew balance: $" + balance);
     }
 
-    //Make a transfer from user's account
-    public void transfer() {
-        JOptionPane.showMessageDialog(null, "You chose Transfer!");
-                transferenceStr = JOptionPane.showInputDialog(null, "Enter the value you want to transfer: ");
-                transference = Double.parseDouble(transferenceStr);
-                if (transference > balance) {
-                    JOptionPane.showMessageDialog(null, "You don't have enough money to make a transference!");
-                } else if (transference <= balance)  {
-                    balance -= transference;
-                    JOptionPane.showMessageDialog(null, "Transfer successful!\nNew balance: $" + balance);
+    //Make a withdraw from user's account
+    public void withdraw() {
+        JOptionPane.showMessageDialog(null, "You chose Withdraw!");
+                withdrawStr = JOptionPane.showInputDialog(null, "Enter the value you want to withdraw: ");
+                withdraw = Double.parseDouble(withdrawStr);
+                if (withdraw > balance) {
+                    JOptionPane.showMessageDialog(null, "You don't have enough money to make a withdraw!");
+                } else if (withdraw <= balance)  {
+                    balance -= withdraw;
+                    JOptionPane.showMessageDialog(null, "Withdraw successful!\nNew balance: $" + balance);
                 }
     }
 
